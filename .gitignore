@@ -1,0 +1,39 @@
+```gitignore
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Environment Variables
+.env
+.env.*
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python tools
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Secrets
+*.pem
+*.key
+```
