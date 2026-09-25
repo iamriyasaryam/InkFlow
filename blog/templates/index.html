@@ -1,11 +1,167 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>InkFlow | Home</title>
+
+    <link rel="stylesheet" href="{% static "style.css" %}">
 </head>
+
 <body>
-    <h1>Welcome!</h1>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="home.html" class="logo">
+                InkFlow
+            </a>
+
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">My Posts</a>
+                <a href="login.html">Login</a>
+
+                <a href="create-post.html" class="write-btn">
+                    Write
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="tag">
+                    ✦ Share your thoughts
+                </span>
+
+                <h1>
+                    Ideas worth
+                    <span>sharing.</span>
+                </h1>
+
+                <p>
+                    Discover interesting stories, ideas and experiences
+                    from people around the world.
+                </p>
+
+                <a href="#posts" class="primary-btn">
+                    Explore Blogs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Blog Section -->
+    <main class="container" id="posts">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">DISCOVER</p>
+
+                <h2>
+                    Latest Stories
+                </h2>
+            </div>
+
+            <a href="#" class="view-all">
+                View all →
+            </a>
+
+        </div>
+
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+
+            {% for post in posts %}
+            <!-- Blog Card -->
+            <article class="blog-card">
+
+                <div class="blog-image">
+                    <span>Technology</span>
+                </div>
+
+                <div class="blog-content">
+
+                    <div class="post-meta">
+                        <span>Sep 24, 2026</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+
+                    <h3>
+                        {{ post.title }}
+                    </h3>
+
+                    <p>
+                       {{ post.content }}
+                    </p>
+
+                    <div class="author">
+
+                        <div class="avatar">
+                            R
+                        </div>
+
+                        <div>
+                            <strong>{{ post.author }}</strong>
+                            <small>Developer</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+            {% endfor %}
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                <h3>InkFlow</h3>
+
+                <p>
+                    A place for ideas, stories and experiences.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 InkFlow. All rights reserved.
+        </div>
+
+    </footer>
+
 </body>
 </html>
