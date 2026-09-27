@@ -1,0 +1,423 @@
+```css
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e6edf5;
+}
+
+.nav-container {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #356fa8;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav > a {
+    font-size: 14px;
+    color: #536174;
+}
+
+.navbar nav > a:hover {
+    color: #356fa8;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding-left: 10px;
+
+    border-left: 1px solid #e4eaf0;
+}
+
+.profile span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dcebf7;
+    color: #356fa8;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+main {
+    padding: 60px 0 80px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #5d89ad;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+.page-header h1 {
+    font-size: 34px;
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 15px;
+}
+
+
+/* =========================
+   EDITOR CARD
+========================= */
+
+.editor-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e9f0;
+    border-radius: 12px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 5px 20px rgba(40, 80, 120, 0.04);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: #27364a;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border: 1px solid #d8e1e9;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input,
+select {
+    height: 45px;
+    padding: 0 13px;
+}
+
+textarea {
+    min-height: 350px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a1acb8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #6f9fc5;
+
+    box-shadow:
+        0 0 0 3px rgba(111, 159, 197, 0.12);
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #edf1f5;
+}
+
+.cancel-btn {
+    padding: 10px 20px;
+
+    border: 1px solid #d8e1e9;
+    border-radius: 7px;
+
+    color: #536174;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: white;
+}
+
+.cancel-btn:hover {
+    background: #f6f8fa;
+}
+
+.publish-btn {
+    border: none;
+
+    padding: 11px 22px;
+
+    border-radius: 7px;
+
+    background: #356fa8;
+    color: white;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.publish-btn:hover {
+    background: #285c8e;
+}
+
+
+/* =========================
+   WRITING TIP
+========================= */
+
+.writing-tip {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-top: 20px;
+
+    padding: 18px 20px;
+
+    background: #eef5fb;
+
+    border: 1px solid #dbe9f4;
+
+    border-radius: 9px;
+}
+
+.tip-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d7e8f5;
+    color: #356fa8;
+
+    font-size: 14px;
+}
+
+.writing-tip strong {
+    display: block;
+
+    color: #315d82;
+
+    font-size: 13px;
+
+    margin-bottom: 2px;
+}
+
+.writing-tip p {
+    color: #64778a;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #172b3d;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 0;
+}
+
+.footer-content h3 {
+    font-size: 20px;
+}
+
+.footer-content p {
+    color: #b8c6d3;
+    font-size: 13px;
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #2b4052;
+
+    padding: 15px;
+
+    color: #9eafbd;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar nav > a {
+        display: none;
+    }
+
+    .editor-card {
+        padding: 22px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    textarea {
+        min-height: 280px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cancel-btn,
+    .publish-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+```

@@ -1,65 +1,171 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>InkFlow | Create Post</title>
+
+    <link rel="stylesheet" href="{% static "create_post.css"%}">
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
 
-        <h1>Create New Post</h1>
+            <a href="home.html" class="logo">
+                InkFlow
+            </a>
 
-        <form method="POST">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">My Posts</a>
 
-            {% csrf_token %}
+                <div class="profile">
+                    <div class="avatar">R</div>
+                    <span>Riya</span>
+                </div>
+            </nav>
 
-            <div>
-                <label for="title">Title</label>
-                <input
-                    type="text"
-                    id="title"
-                    name="title"
-                    required
-                >
-            </div>
+        </div>
+    </header>
 
-            <br>
 
-            <div>
-                <label for="author">Author</label>
-                <input
-                    type="text"
-                    id="author"
-                    name="author"
-                    required
-                >
-            </div>
+    <!-- Main -->
+    <main class="container">
 
-            <br>
+        <div class="page-header">
 
             <div>
-                <label for="content">Content</label>
-                <textarea
-                    id="content"
-                    name="content"
-                    rows="10"
-                    required
-                ></textarea>
+                <p class="page-label">CREATE</p>
+
+                <h1>Write a new story</h1>
+
+                <p class="subtitle">
+                    Share your thoughts, ideas and experiences with the InkFlow community.
+                </p>
             </div>
 
-            <br>
+        </div>
 
-            <button type="submit">Publish Post</button>
 
-        </form>
+        <!-- Create Post Form -->
+        <section class="editor-card">
 
-    </div>
+            <form method="POST">
+
+                {% csrf_token %}
+                <!-- Title -->
+                <div class="form-group">
+
+                    <label for="title">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Give your post a title..."
+                    >
+
+                </div>
+
+                <!--Author-->
+                <div>
+                    <label for="author">Author</label>
+                    <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        required
+                        placeholder="Enter Author Name"
+                    >
+                </div>
+
+
+                <!-- Content -->
+                <div class="form-group">
+
+                    <label for="content">
+                        Content
+                    </label>
+
+                    <textarea
+                        id="content"
+                        name="content"
+                        placeholder="Start writing your story..."
+                    ></textarea>
+
+                </div>
+
+               
+
+                <!-- Bottom Actions -->
+                <div class="form-actions">
+
+                    <a href="{% url "home" %}" class="cancel-btn">
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="publish-btn"
+                    >
+                        Publish Post
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Writing Tip -->
+        <div class="writing-tip">
+
+            <div class="tip-icon">
+                ✦
+            </div>
+
+            <div>
+                <strong>Writing tip</strong>
+
+                <p>
+                    A good title tells readers what your story is about.
+                    Keep it simple and interesting.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container footer-content">
+
+            <h3>InkFlow</h3>
+
+            <p>
+                Write. Share. Inspire.
+            </p>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 InkFlow. All rights reserved.
+        </div>
+
+    </footer>
 
 </body>
 </html>
+```
