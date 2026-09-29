@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from . import models 
 
 # Create your views here.
@@ -27,3 +27,23 @@ def create_post(request):
 def post_detail(request, post_id):
     post = models.Post.objects.get(id=post_id)
     return render(request, 'post_detail.html', {'post': post})
+
+
+def edit_post(request, post_id):
+    post = get_object_or_404(models.Post, id=post_id)
+
+    if request.method == 'POST':
+
+        post.title = request.POST.get('title')
+        post.author = request.POST.get('author')
+        post.content = request.POST.get('content')
+
+        post.save()
+
+        return redirect('post_detail', post_id=post.id)
+
+    return render(
+        request,
+        'edit_post.html',
+        {'post': post}
+    )

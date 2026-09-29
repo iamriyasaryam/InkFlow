@@ -25,6 +25,10 @@
 
             <p>{{ post.content }}</p>
 
+            <a href="{% url 'edit_post' post.id %}">
+                Edit Post
+            </a>
+
             <br>
 
             <a href="{% url 'home' %}">← Back to Home</a>
