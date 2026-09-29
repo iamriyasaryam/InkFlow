@@ -8,6 +8,7 @@
     <title>InkFlow | Create Post</title>
 
     <link rel="stylesheet" href="{% static "create_post.css"%}">
+    <script src="{% static 'script.js' %}"></script>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
         <!-- Create Post Form -->
         <section class="editor-card">
 
-            <form method="POST">
+            <form method="POST" class="Form">
 
                 {% csrf_token %}
                 <!-- Title -->
