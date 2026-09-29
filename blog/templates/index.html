@@ -127,9 +127,18 @@
 
                     </div>
 
+                     <a href="{% url 'post_detail' post.id %}">
+                        Read More →
+                    </a>
+
                 </div>
 
+                {% empty %}
+
+                <p>No posts available.</p>
+                
             </article>
+
             {% endfor %}
         </div>
 

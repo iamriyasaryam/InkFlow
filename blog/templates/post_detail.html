@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ post.title }}</title>
+
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <article class="post">
+
+            <h1>{{ post.title }}</h1>
+
+            <p class="meta">
+                By {{ post.author }} · {{ post.created_at }}
+            </p>
+
+            <p>{{ post.content }}</p>
+
+            <br>
+
+            <a href="{% url 'home' %}">← Back to Home</a>
+
+        </article>
+
+    </div>
+
+</body>
+</html>
