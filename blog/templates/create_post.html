@@ -1,39 +1,18 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>InkFlow | Create Post</title>
 
-    <link rel="stylesheet" href="{% static "create_post.css"%}">
-    <script src="{% static 'script.js' %}"></script>
-</head>
+        {% block title %}
+            Create Post
+        {% endblock %}
 
-<body>
+        {% block extra_css %}
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
+        <link rel="stylesheet" href="{% static "create_post.css" %}">
+        
+        {% endblock %}
 
-            <a href="home.html" class="logo">
-                InkFlow
-            </a>
-
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="#">Explore</a>
-                <a href="#">My Posts</a>
-
-                <div class="profile">
-                    <div class="avatar">R</div>
-                    <span>Riya</span>
-                </div>
-            </nav>
-
-        </div>
-    </header>
+    {% block content %}
 
 
     <!-- Main -->
@@ -147,26 +126,4 @@
 
     </main>
 
-
-    <!-- Footer -->
-    <footer>
-
-        <div class="container footer-content">
-
-            <h3>InkFlow</h3>
-
-            <p>
-                Write. Share. Inspire.
-            </p>
-
-        </div>
-
-        <div class="copyright">
-            © 2026 InkFlow. All rights reserved.
-        </div>
-
-    </footer>
-
-</body>
-</html>
-```
+{% endblock %}

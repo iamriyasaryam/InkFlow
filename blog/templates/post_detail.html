@@ -1,17 +1,12 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ post.title }}</title>
+    {% block title %}
+        Home
+    {% endblock %}
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-
-<body>
+    {% block content %}
 
     <div class="container">
 
@@ -51,8 +46,4 @@
 
     </div>
 
-    <script src="{% static 'script.js' %}"></script>
-
-</body>
-</html>
-
+   {% endblock %}
