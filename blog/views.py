@@ -1,10 +1,30 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from . import models 
+from django.contrib import messages
+from .models import Post 
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
-    posts = models.Post.objects.all().order_by('-created_at')
-    return render(request, 'index.html', {'posts': posts})
+
+    query = request.GET.get('q', '')
+
+    posts = Post.objects.all().order_by('-created_at')
+
+    if query:
+        posts = posts.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(author__icontains=query)
+        )
+
+    return render(
+        request,
+        'index.html',
+        {
+            'posts': posts,
+            'query': query
+        }
+    )
 
 def create_post(request):
 
@@ -14,23 +34,25 @@ def create_post(request):
         author = request.POST.get('author')
         content = request.POST.get('content')
 
-        models.Post.objects.create(
+        Post.objects.create(
             title=title,
             author=author,
             content=content
         )
+
+        messages.success(request, 'Post created successfully!')
 
         return redirect('home')
 
     return render(request, 'create_post.html')
 
 def post_detail(request, post_id):
-    post = models.Post.objects.get(id=post_id)
+    post = Post.objects.get(id=post_id)
     return render(request, 'post_detail.html', {'post': post})
 
 
 def edit_post(request, post_id):
-    post = get_object_or_404(models.Post, id=post_id)
+    post = get_object_or_404(Post, id=post_id)
 
     if request.method == 'POST':
 
@@ -39,6 +61,8 @@ def edit_post(request, post_id):
         post.content = request.POST.get('content')
 
         post.save()
+
+        messages.success(request, 'Post updated successfully!')
 
         return redirect('post_detail', post_id=post.id)
 
@@ -50,10 +74,11 @@ def edit_post(request, post_id):
 
 def delete_post(request, post_id):
 
-    post = get_object_or_404(models.Post, id=post_id)
+    post = get_object_or_404(Post, id=post_id)
 
     if request.method == 'POST':
         post.delete()
+        messages.success(request, 'Post deleted successfully!')
         return redirect('home')
 
     return redirect('post_detail', post_id=post.id)

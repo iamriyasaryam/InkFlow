@@ -6,6 +6,8 @@
 
     {% block content %}
 
+
+
     <!-- Hero Section -->
     <section class="hero">
 
@@ -57,6 +59,23 @@
 
         </div>
 
+         <form method="GET" class="search-form">
+
+            <input
+                type="text"
+                name="q"
+                placeholder="Search posts..."
+                value="{{ query }}"
+            >
+
+            <button type="submit" class="btn">
+                Search
+            </button>
+
+        </form>
+
+    
+
 
         <!-- Blog Grid -->
         <div class="blog-grid">
@@ -105,6 +124,20 @@
                 </div>
 
                 {% empty %}
+
+                {% if query %}
+
+                    <p>
+                        No posts found for "{{ query }}".
+                    </p>
+
+                {% else %}
+
+                    <p>
+                        No posts available.
+                    </p>
+
+                {% endif %}
 
                 <p>No posts available.</p>
                 
